@@ -1,5 +1,5 @@
 import { REGISTER_USER, LOGIN_USER, LOGOUT_USER, AUTH_USER } from "../hoc/type";
-import { request } from "../utils/axios";
+import { request, requesth } from "../utils/axios";
 const USER_URL = "/api/web";
 
 export function registerUser(dataToSubmit) {
@@ -25,10 +25,12 @@ export function logoutUser() {
   };
 }
 
-export function authUser() {
-  const data = request("post", USER_URL + "/auth");
+export function getDevices(TokenToSubmit) {
+  const data = requesth("GET", USER_URL + "/devices", TokenToSubmit);
   return {
     type: AUTH_USER,
     payload: data,
   };
+}
+export function authUser(TokenToSubmit) {
 }

@@ -11,3 +11,12 @@ export const request = (method, url, data) => {
     .then((res) => res.data)
     .catch((err) => console.log(err));
 };
+export const requesth = (method, url, headers) => {
+  return axios({
+    method,
+    url: DOMAIN + url,
+    headers:{'Authorization' : 'Bearer ' + headers},
+  })
+    .then((res) => res.data)
+    .catch((err) => console.log(err));
+};

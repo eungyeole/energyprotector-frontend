@@ -14,7 +14,7 @@ export const request = (method, url, data) => {
 export const requesth = (method, url, headers) => {
   return axios({
     method,
-    url: DOMAIN + url,
+    url: DOMAIN + url + "?" + new Date().getSeconds(),
     headers:{'Authorization' : 'Bearer ' + headers},
   })
     .then((res) => res.data)

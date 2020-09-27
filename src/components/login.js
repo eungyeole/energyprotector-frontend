@@ -21,7 +21,7 @@ function Login({isOpen, close}) {
     },[])
     const onGroupHandler = (e) => {
         setGroup(e.currentTarget.value);
-      };
+    };
     const onIdHandler = (e) => {
       setId(e.currentTarget.value);
     };
@@ -41,7 +41,6 @@ function Login({isOpen, close}) {
       
     dispatch(loginUser(body))
         .then((res) => {
-            console.log(res);
             if(idSave){
                 localStorage.setItem('id',body.raspberry_id);
                 localStorage.setItem('group',body.raspberry_group);

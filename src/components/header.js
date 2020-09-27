@@ -38,7 +38,7 @@ function Header() {
             <Question isOpen={isModalOpen} close={closeModal}></Question>
             <Login isOpen={isLoginOpen} close={closeLogin}></Login>
             <header>
-                <div className="logo"><i className="far fa-lightbulb"></i>에너지지킴이</div>
+                <div onClick={()=>window.location.href="/"} className="logo"><i className="far fa-lightbulb"></i>에너지지킴이</div>
                 <ul className="nav">
                 <li onClick={logOut}><a>그래프</a></li>
                 {token?(
